@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="PolozkaSkladu">
+  <ClassDiagramComponents>
+    <Class name="PolozkaSkladu" package="sklad" visibility="public" xPosition="-401.0" yPosition="-123.0">
+      <Fields>
+        <Field name="aTovar" type="Tovar" visibility="private"/>
+        <Field name="pocetKusov" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Tovar" name="paTovar"/>
+          <Argument type="int" name="paPocet"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTovar" returnType="Tovar" visibility="public"/>
+        <Method name="getPocetKusov" returnType="int" visibility="public"/>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="odoberKusy" returnType="boolean" visibility="public">
+          <Argument type="int" name="pocetDaj"/>
+        </Method>
+        <Method name="pridajKusy" returnType="boolean" visibility="public">
+          <Argument type="int" name="pocetPridaj"/>
+        </Method>
+        <Method name="dajMesacneNaklady" returnType="double" visibility="public"/>
+        <Method name="dajPopis" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

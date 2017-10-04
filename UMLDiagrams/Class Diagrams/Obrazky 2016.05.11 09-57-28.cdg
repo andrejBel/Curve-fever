@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Obrazky">
+  <ClassDiagramComponents>
+    <Class name="ManazerObrazkov" package="Obrazky" visibility="public" xPosition="857.0" yPosition="248.0">
+      <Fields>
+        <Field name="obrazky" type="ArrayList&lt;Obrazok&gt;" visibility="private"/>
+        <Field name="sirka" type="int" visibility="private"/>
+        <Field name="vyska" type="int" visibility="private"/>
+        <Field name="generator" type="Random" visibility="private"/>
+        <Field name="cisloDoDalsiehoGenerovania" type="long" visibility="private"/>
+        <Field name="kontrola" type="Kontrola" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Kontrola" name="kontrola"/>
+          <Argument type="Krivka[]" name="krivky"/>
+          <Argument type="Platno" name="platno"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="pocetNakreslenych" returnType="int" visibility="public"/>
+        <Method name="getCisloDoDalsiehoGenerovania" returnType="long" visibility="public"/>
+        <Method name="setCisloDoDalsiehoGenerovania" returnType="void" visibility="public">
+          <Argument type="long" name="cisloDoDalsiehoGenerovania"/>
+        </Method>
+        <Method name="nahodneVyberObrazkyNaKreslenie" returnType="void" visibility="public"/>
+        <Method name="ktoryBonusVykonat" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="cisloKrivky"/>
+        </Method>
+        <Method name="nekresliZiadny" returnType="void" visibility="public"/>
+        <Method name="kresli" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Obrazok" package="Obrazky" visibility="public" isAbstract="true" xPosition="480.0" yPosition="226.0">
+      <Fields>
+        <Field name="obrazok" type="Image" visibility="private"/>
+        <Field name="ROZMER" type="int" visibility="private" isStatic="true" isFinal="true"/>
+        <Field name="suradnicaX" type="int" visibility="private"/>
+        <Field name="suradnicaY" type="int" visibility="private"/>
+        <Field name="kontrola" type="Kontrola" visibility="private"/>
+        <Field name="kresli" type="boolean" visibility="private"/>
+        <Field name="akcia" type="boolean" visibility="private"/>
+        <Field name="kosNavstivenychBodov" type="ArrayList&lt;Bod&gt;" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Kontrola" name="kontrola"/>
+          <Argument type="String" name="cesta"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSuradnicaX" returnType="int" visibility="public"/>
+        <Method name="setSuradnicaX" returnType="void" visibility="public">
+          <Argument type="int" name="suradnicaX"/>
+        </Method>
+        <Method name="getSuradnicaY" returnType="int" visibility="public"/>
+        <Method name="setSuradnicaY" returnType="void" visibility="public">
+          <Argument type="int" name="suradnicaY"/>
+        </Method>
+        <Method name="getObrazok" returnType="Image" visibility="protected"/>
+        <Method name="getROZMER" returnType="int" visibility="public"/>
+        <Method name="getKosNavstivenychBodov" returnType="ArrayList&lt;Bod&gt;" visibility="protected"/>
+        <Method name="isKresli" returnType="boolean" visibility="public"/>
+        <Method name="isAkcia" returnType="boolean" visibility="public"/>
+        <Method name="setZaciatokAkcie" returnType="void" visibility="public"/>
+        <Method name="setKoniecAkcie" returnType="void" visibility="public"/>
+        <Method name="setNekresli" returnType="void" visibility="public"/>
+        <Method name="setKresli" returnType="void" visibility="public"/>
+        <Method name="mojeSuradnice" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="cisloKrivky"/>
+        </Method>
+        <Method name="polozNaMapu" returnType="void" visibility="public"/>
+        <Method name="dajPrecZMapy" returnType="void" visibility="public"/>
+        <Method name="paintComponent" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ObrazokPrejdiCezVsetko" package="Obrazky" visibility="public" xPosition="446.0" yPosition="27.0">
+      <Fields>
+        <Field name="kontrola" type="Kontrola" visibility="private"/>
+        <Field name="krivky" type="Krivka[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Kontrola" name="kontrola"/>
+          <Argument type="Krivka[]" name="krivky"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mojeSuradnice" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="cisloKrivky"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ObrazokSpomal" package="Obrazky" visibility="public" xPosition="76.0" yPosition="392.0">
+      <Fields>
+        <Field name="krivky" type="Krivka[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Kontrola" name="kontrola"/>
+          <Argument type="Krivka[]" name="krivky"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mojeSuradnice" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="cisloKrivky"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ObrazokSpomalMna" package="Obrazky" visibility="public" xPosition="72.0" yPosition="553.0">
+      <Fields>
+        <Field name="krivky" type="Krivka[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Kontrola" name="kontrola"/>
+          <Argument type="Krivka[]" name="krivky"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mojeSuradnice" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="cisloKrivky"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ObrazokStenaFuc" package="Obrazky" visibility="public" xPosition="425.0" yPosition="916.0">
+      <Fields>
+        <Field name="kontrola" type="Kontrola" visibility="private"/>
+        <Field name="platno" type="Platno" visibility="private"/>
+        <Field name="krivky" type="Krivka[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Kontrola" name="kontrola"/>
+          <Argument type="Krivka[]" name="krivky"/>
+          <Argument type="Platno" name="platno"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mojeSuradnice" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="cisloKrivky"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ObrazokVymazat" package="Obrazky" visibility="public" xPosition="836.0" yPosition="693.0">
+      <Fields>
+        <Field name="kontrola" type="Kontrola" visibility="private"/>
+        <Field name="obrazok" type="Image" visibility="private"/>
+        <Field name="manazerObrazkov" type="ManazerObrazkov" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Kontrola" name="kontrola"/>
+          <Argument type="ManazerObrazkov" name="manazer"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mojeSuradnice" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="cisloKrivky"/>
+        </Method>
+        <Method name="paintComponent" returnType="void" visibility="public">
+          <Argument type="Graphics" name="g"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ObrazokZmenOrientaciuKlaves" package="Obrazky" visibility="public" xPosition="58.0" yPosition="754.0">
+      <Fields>
+        <Field name="krivky" type="Krivka[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Kontrola" name="kontrola"/>
+          <Argument type="Krivka[]" name="krivky"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mojeSuradnice" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="cisloKrivky"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ObrazokZrychli" package="Obrazky" visibility="public" xPosition="87.0" yPosition="174.0">
+      <Fields>
+        <Field name="krivky" type="Krivka[]" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Kontrola" name="kontrola"/>
+          <Argument type="Krivka[]" name="krivky"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="mojeSuradnice" returnType="boolean" visibility="public">
+          <Argument type="int" name="x"/>
+          <Argument type="int" name="y"/>
+          <Argument type="int" name="cisloKrivky"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="Obrazky.ObrazokSpomal" target="Obrazky.Obrazok"/>
+    <IsRelation name="is" source="Obrazky.ObrazokPrejdiCezVsetko" target="Obrazky.Obrazok"/>
+    <HasRelation name="obrazky" source="Obrazky.ManazerObrazkov" target="Obrazky.Obrazok" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="ArrayList&lt;Obrazok&gt;"/>
+    <IsRelation name="is" source="Obrazky.ObrazokVymazat" target="Obrazky.Obrazok"/>
+    <IsRelation name="is" source="Obrazky.ObrazokSpomalMna" target="Obrazky.Obrazok"/>
+    <IsRelation name="is" source="Obrazky.ObrazokZmenOrientaciuKlaves" target="Obrazky.Obrazok"/>
+    <HasRelation name="manazerObrazkov" source="Obrazky.ObrazokVymazat" target="Obrazky.ManazerObrazkov" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="Obrazky.ObrazokZrychli" target="Obrazky.Obrazok"/>
+    <IsRelation name="is" source="Obrazky.ObrazokStenaFuc" target="Obrazky.Obrazok"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

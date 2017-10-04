@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="MojaVynimka">
+  <ClassDiagramComponents>
+    <Class name="MojaVynimka" package="sklad" visibility="public" xPosition="709.0" yPosition="259.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="text"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>
